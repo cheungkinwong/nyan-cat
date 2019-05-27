@@ -5,6 +5,8 @@ body {
 }
 
 button {
+  position: relative;
+  display: block;
   margin: auto;
-  vertical-align: middle;
+  top: 50%;
 }
