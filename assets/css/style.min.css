@@ -1,2 +1,2 @@
-body{width:100%;height:100vh;overflow:hidden}button{position:relative;display:block;margin:auto;top:50%}
+body{padding:0;margin:0;overflow:hidden}#nyanbox{width:100%;height:100vh;position:relative}#nyanbox #nyan{position:absolute;left:-150px;top:-150px;width:10em;height:10em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}button{position:relative;display:block;margin:auto;top:50%}
 /*# sourceMappingURL=style.min.css.map */
