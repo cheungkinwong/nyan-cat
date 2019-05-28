@@ -8,15 +8,11 @@
     <title>Nyan Cat JS</title>
   </head>
   <body>
+    <audio id="nyansong" src="./assets/mp3/nyancat.mp3" preload="auto"></audio>
     <div id="nyanbox">
       <img src="./assets/img/nyancat.png" alt="" id="nyan" />
-      <button id="nyancat" onclick="nyanrain()">Nyan!</button>
-      <audio
-        id="nyansong"
-        src="./assets/mp3/nyancat.mp3"
-        preload="auto"
-      ></audio>
+      <button id="nyancat" onclick="onClick()">Nyan!</button>
     </div>
+    <script src="./assets/js/nyancat.js"></script>
   </body>
-  <script src="./assets/js/nyancat.js"></script>
 </html>

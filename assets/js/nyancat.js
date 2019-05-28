@@ -1,10 +1,13 @@
-function nyanrain() {
-  var cat = document.getElementById("nyan");
-  var pos = -100;
-  document.getElementById("nyansong").play();
+const onClick = () => {
+  const cat = document.getElementById("nyan");
+  const song = document.getElementById("nyansong");
+  const button = document.getElementById("nyancat");
+
+  song.play();
   document.body.style.background = "url('./assets/img/nyanbackground.png')";
-  var id = setInterval(frame, 5);
-  function frame() {
+  button.style.display = "none";
+
+  const frame = () => {
     if (pos == 620) {
       clearInterval(id);
     } else {
@@ -12,5 +15,9 @@ function nyanrain() {
       cat.style.top = pos + "px";
       cat.style.left = pos + "px";
     }
-  }
-}
+  };
+
+  let id = setInterval(frame, 5);
+  let pos = -100;
+  setInterval(onClick, 4000);
+};
