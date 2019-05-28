@@ -1,22 +1,16 @@
-document.getElementById("nyancat").addEventListener("click", nyanrain);
-
-var time;
-function timeout() {
-  time = setTimeout(nyanrain, 10000);
-}
-
 function nyanrain() {
-  var elem = document.getElementById("nyan");
+  var cat = document.getElementById("nyan");
   var pos = -100;
+  document.getElementById("nyansong").play();
+  document.body.style.background = "url('./assets/img/nyanbackground.png')";
   var id = setInterval(frame, 5);
-
   function frame() {
     if (pos == 620) {
       clearInterval(id);
     } else {
       pos++;
-      elem.style.top = pos + "px";
-      elem.style.left = pos + "px";
+      cat.style.top = pos + "px";
+      cat.style.left = pos + "px";
     }
   }
 }

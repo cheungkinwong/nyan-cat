@@ -5,8 +5,8 @@
 - [x] Create a button (like you did in the previous exercise)
 - [x] When you click the button, it should start raining Nyan Cats
 - [ ] Make the rain stop after 10 seconds
-- [ ] While it's raining Nyan Cats, the background should become the one from the original animation
-- [ ] play the song while it's raining nyan cats
+- [x] While it's raining Nyan Cats, the background should become the one from the original animation
+- [x] play the song while it's raining nyan cats
 
 ### Bonus Objectives
 
