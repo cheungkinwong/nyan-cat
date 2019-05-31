@@ -42,26 +42,26 @@
 // new code
 
 var seconds = 0;
-let y = -100;
+let y = -350;
 let x = getRandomInt(window.innerWidth / 2);
-let angle = getRandomInt(5);
-let speed = getRandomInt(5);
-
+let angle = getRandomInt(10);
+let speed = getRandomInt(10);
 const cat = document.getElementById("nyan");
 const song = document.getElementById("nyansong");
 const button = document.getElementById("nyancat");
+const box = document.getElementById("nyanbox");
 
 function onClick() {
   counter();
-  change();
-  reset();
+  start();
   rain();
+  reset();
 }
 
 function counter() {
   setInterval(function() {
     if (seconds < 10) {
-      seconds++;
+      seconds += 1;
       console.log("lol", seconds);
     } else {
       clearInterval(counter);
@@ -70,35 +70,28 @@ function counter() {
 }
 
 function getRandomInt(max) {
-  return Math.round(Math.random() * Math.floor(max));
+  return 1 + Math.floor(Math.random() * Math.floor(max));
 }
 
-function change() {
-  document.body.style.background = "url('./assets/img/nyanbackground.png')";
+function start() {
+  box.style.background = "url('https://i.gifer.com/TPH.gif')";
+  box.style.backgroundSize = "cover";
+
   song.play();
   button.style.display = "none";
-}
-
-function reset() {
-  setTimeout(function() {
-    song.pause();
-    song.currentTime = 0;
-    document.body.style.background = "none";
-    button.style.display = "block";
-  }, 10000);
+  cat.style.display = "block";
+  seconds = 0;
+  y = -350;
+  x = getRandomInt(window.innerWidth / 2);
 }
 
 function rain() {
-  setInterval(function() {
+  raining = setInterval(function() {
     if (y > window.innerHeight || x > window.innerWidth) {
-      y = -100;
+      y = -350;
       x = getRandomInt(window.innerWidth / 2);
       angle = getRandomInt(10);
       speed = getRandomInt(10);
-      console.log("lmao", seconds);
-    } else if (seconds === 10) {
-      clearInterval(rain);
-      cat.style.display = "none";
     } else {
       x += angle;
       y += speed;
@@ -106,4 +99,15 @@ function rain() {
       cat.style.left = x + "px";
     }
   }, 5);
+}
+
+function reset() {
+  setTimeout(function() {
+    song.pause();
+    song.currentTime = 0;
+    box.style.background = "none";
+    button.style.display = "block";
+    cat.style.display = "none";
+    clearInterval(raining);
+  }, 10000);
 }
