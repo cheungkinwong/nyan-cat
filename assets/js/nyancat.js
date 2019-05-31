@@ -44,6 +44,9 @@
 var seconds = 0;
 let y = -100;
 let x = getRandomInt(window.innerWidth / 2);
+let angle = getRandomInt(5);
+let speed = getRandomInt(5);
+
 const cat = document.getElementById("nyan");
 const song = document.getElementById("nyansong");
 const button = document.getElementById("nyancat");
@@ -67,7 +70,7 @@ function counter() {
 }
 
 function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+  return Math.round(Math.random() * Math.floor(max));
 }
 
 function change() {
@@ -87,16 +90,18 @@ function reset() {
 
 function rain() {
   setInterval(function() {
-    console.log("lmao", seconds);
     if (y > window.innerHeight || x > window.innerWidth) {
       y = -100;
       x = getRandomInt(window.innerWidth / 2);
-    } else if (seconds == 10) {
+      angle = getRandomInt(10);
+      speed = getRandomInt(10);
+      console.log("lmao", seconds);
+    } else if (seconds === 10) {
       clearInterval(rain);
       cat.style.display = "none";
     } else {
-      x++;
-      y++;
+      x += angle;
+      y += speed;
       cat.style.top = y + "px";
       cat.style.left = x + "px";
     }
