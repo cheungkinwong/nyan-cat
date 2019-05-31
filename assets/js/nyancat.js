@@ -51,6 +51,7 @@ const button = document.getElementById("nyancat");
 function onClick() {
   counter();
   change();
+  reset();
   rain();
 }
 
@@ -70,18 +71,18 @@ function getRandomInt(max) {
 }
 
 function change() {
-  console.log("rofl", seconds);
+  document.body.style.background = "url('./assets/img/nyanbackground.png')";
+  song.play();
+  button.style.display = "none";
+}
 
-  if (seconds < 10) {
-    document.body.style.background = "url('./assets/img/nyanbackground.png')";
-    song.play();
-    button.style.display = "none";
-  } else {
+function reset() {
+  setTimeout(function() {
     song.pause();
     song.currentTime = 0;
     document.body.style.background = "none";
     button.style.display = "block";
-  }
+  }, 10000);
 }
 
 function rain() {
